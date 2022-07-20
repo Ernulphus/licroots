@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
-// Router
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './App.css';
 // Components
-import Home from './components/Home'
+import Home from './components/Home';
 // import News from './components/News'
 // import Donate from './components/Donate'
 // import Gallery from './components/Gallery'
 
 class App extends Component {
   render () {
-	const HomeComponent = () => (<Home/>)
+	// const HomeComponent = () => (<Home/>);
 	// const NewsComponent = () => (<News/>)
 	return (
-		<Router>
-		 <div className="App">
-		  <Route exact path="/" render={HomeComponent}/>
-		 </div>
-		</Router>
+		<BrowserRouter>
+		 <Routes>
+			<Route exact path="/" element={<Home/>}/>
+		 </Routes>
+		</BrowserRouter>
 	);
   }
 }
